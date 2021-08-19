@@ -125,7 +125,7 @@ class Request extends BaseRequest {
     return Uri.splitQueryString(body, encoding: encoding);
   }
 
-  set bodyFields(Map<String, String> fields) {
+  set bodyFields(Map<String, dynamic> fields) {
     var contentType = _contentType;
     if (contentType == null) {
       _contentType = MediaType('application', 'x-www-form-urlencoded');
