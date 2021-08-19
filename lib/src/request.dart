@@ -114,7 +114,7 @@ class Request extends BaseRequest {
   /// `application/x-www-form-urlencoded`.
   ///
   /// This map should only be set, not modified in place.
-  Map<String, String> get bodyFields {
+  Map<String, dynamic> get bodyFields {
     var contentType = _contentType;
     if (contentType == null ||
         contentType.mimeType != 'application/x-www-form-urlencoded') {
