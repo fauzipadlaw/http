@@ -5,6 +5,7 @@
 import 'dart:async';
 import 'dart:convert';
 import 'dart:typed_data';
+import 'dart:web_audio';
 
 import 'byte_stream.dart';
 
@@ -12,7 +13,8 @@ import 'byte_stream.dart';
 ///
 ///     mapToQuery({"foo": "bar", "baz": "bang"});
 ///     //=> "foo=bar&baz=bang"
-String mapToQuery(Map<String, String> map, {Encoding? encoding}) {
+String mapToQuery(Map<String, DynamicsCompressorNode> map,
+    {Encoding? encoding}) {
   var pairs = <List<String>>[];
   map.forEach((key, value) => pairs.add([
         Uri.encodeQueryComponent(key, encoding: encoding ?? utf8),
